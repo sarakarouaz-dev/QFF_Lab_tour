@@ -1,171 +1,168 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lab tour, programme des groupes</title>
+<title>QFF Lab Tour, your schedule</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ECF0F3; --surface:#FFFFFF; --ink:#16202B; --muted:#5B6773; --line:#D3DAE0;
-  --b1:#2F6FB3; --b2:#2E8B6A; --b3:#B4562E;
-  --group:#2F6FB3;
-  color-scheme: light;
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px);
-  padding-bottom:env(safe-area-inset-bottom,0px);
+  --b1:#2F6FB3; --b2:#2E8B6A; --b3:#B4562E; --group:#2F6FB3;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0F151B; --surface:#18212A; --ink:#E7ECF0; --muted:#9AA6B1; --line:#2B3741;
-    --b1:#6FA6E0; --b2:#5CC29C; --b3:#E58A62;
-    color-scheme: dark;
+    --b1:#6FA6E0; --b2:#5CC29C; --b3:#E58A62; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0F151B; --surface:#18212A; --ink:#E7ECF0; --muted:#9AA6B1; --line:#2B3741;
-  --b1:#6FA6E0; --b2:#5CC29C; --b3:#E58A62;
-  color-scheme: dark;
+  --b1:#6FA6E0; --b2:#5CC29C; --b3:#E58A62; color-scheme:dark;
 }
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:17px;line-height:1.5}
+  font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.5}
 .wrap{max-width:560px;margin:0 auto;padding:20px 18px 48px}
-h1,h2,.display{font-family:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif}
+h1,h2{font-family:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--b1);outline-offset:3px;border-radius:6px}
-
-/* Accueil */
 .home h1{font-size:2.2rem;line-height:1.1;margin:18px 0 8px;font-weight:800;letter-spacing:-0.02em}
-.home p{color:var(--muted);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gbtn{display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:1;
-  padding:12px;border-radius:16px;text-decoration:none;color:#fff;background:var(--c);
-  font-family:"Bricolage Grotesque",sans-serif}
-.gbtn b{font-size:2.4rem;line-height:1;font-weight:800}
-.gbtn span{font-size:.95rem;opacity:.92;font-family:"Atkinson Hyperlegible",sans-serif}
-.legend{margin-top:28px;display:grid;gap:8px;font-size:.95rem}
-.legend div{display:flex;gap:10px;align-items:center}
-.dot{width:14px;height:14px;border-radius:4px;flex:none}
-
-/* Vue groupe */
-.hero{background:var(--group);color:#fff;border-radius:22px;padding:22px 22px 20px;margin-top:8px}
-.hero .back{display:inline-block;color:#fff;opacity:.9;text-decoration:none;font-size:.95rem;margin-bottom:14px}
+.home p{color:var(--muted);margin:0 0 14px}
+h2{font-size:1.3rem;margin:28px 0 10px;font-weight:800}
+.hero{background:var(--group);color:#fff;border-radius:22px;padding:22px;margin-top:8px}
 .hero h1{margin:0;font-size:3.4rem;line-height:.95;font-weight:800;letter-spacing:-0.03em}
 .hero p{margin:10px 0 0;font-size:1rem;opacity:.95}
-.badge10{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:4px 12px;font-size:.92rem}
-
+.badge10{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:4px 12px;font-size:.92rem}
 .now{margin:18px 0 6px;background:var(--surface);border:2px solid var(--group);border-radius:16px;padding:14px 16px}
 .now small{color:var(--muted);display:block}
-.now strong{font-size:1.25rem}
-
+.now strong{font-size:1.2rem}
 ol.tl{list-style:none;margin:18px 0 0;padding:0}
-.slot{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:stretch}
+.slot{display:grid;grid-template-columns:62px 1fr;gap:12px}
 .time{font-variant-numeric:tabular-nums;font-weight:700;padding-top:12px;font-size:1rem}
 .time small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
 .card{background:var(--surface);border-radius:14px;padding:12px 14px;border-left:6px solid var(--bc,var(--line));margin:4px 0}
-.card .lab{font-size:1.15rem;font-weight:700}
-.card .bat{color:var(--muted);font-size:.95rem}
-.slot.pause .card{background:transparent;border:2px dashed var(--line);border-left-width:2px}
+.card .lab{font-size:1.08rem;font-weight:700;line-height:1.3}
+.card .inst{color:var(--muted);font-size:.92rem}
+.card .bat{font-size:.92rem;margin-top:4px}
+.card .bat a{font-weight:700}
+.slot.pause .card{background:transparent;border:2px dashed var(--line)}
 .slot.current .card{box-shadow:0 0 0 3px var(--group)}
 .slot.done{opacity:.5}
 .move{margin:2px 0 2px 74px;font-size:.9rem;color:var(--muted);padding-left:14px;border-left:2px dotted var(--line)}
 .move.big{color:var(--ink);font-weight:700}
-.foot{margin-top:28px;color:var(--muted);font-size:.92rem}
-@media (prefers-reduced-motion:no-preference){ .hero{animation:in .35s ease-out} @keyframes in{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}} }
+.places{display:grid;gap:10px}
+.place{background:var(--surface);border-radius:14px;padding:12px 14px;border-left:6px solid var(--bc)}
+.place b{display:block}
+.place span{color:var(--muted);font-size:.92rem;display:block}
+.place a{display:inline-block;margin-top:6px;font-weight:700}
+ul.rules{padding-left:20px;margin:0}
+ul.rules li{margin-bottom:6px}
+.foot{margin-top:24px;color:var(--muted);font-size:.92rem}
 </style>
 </head>
 <body>
 <main class="wrap" id="app"></main>
 <script>
-/* Pour renommer les labos, il suffit de modifier les noms ci-dessous. */
+const BUILDINGS = {
+  57:{name:"Pfaffenwaldring 57", sub:"PI5 and PI1, University of Stuttgart", addr:"Pfaffenwaldring 57, 70569 Stuttgart", c:"var(--b1)"},
+  13:{name:"Allmandring 13", sub:"PI3, University of Stuttgart", addr:"Allmandring 13, 70569 Stuttgart", c:"var(--b2)"},
+  19:{name:"ARENA2036", sub:"Pfaffenwaldring 19", addr:"ARENA2036, Pfaffenwaldring 19, 70569 Stuttgart", c:"var(--b3)"}
+};
+const mapUrl = b => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(BUILDINGS[b].addr);
 const LABS = {
-  1:{nom:"Labo 1",bat:57}, 2:{nom:"Labo 2",bat:57}, 3:{nom:"Labo 3",bat:57}, 4:{nom:"Labo 4",bat:57}, 5:{nom:"Labo 5",bat:57},
-  6:{nom:"Labo 6",bat:13}, 7:{nom:"Labo 7",bat:13}, 8:{nom:"Labo 8",bat:13}, 9:{nom:"Labo 9",bat:13},
-  10:{nom:"Labo 10",bat:19}
+  1:{nom:"The Quantum Länd", inst:"5th Institute of Physics (PI5)", bat:57},
+  2:{nom:"Rubidium Ion Microscope", inst:"5th Institute of Physics (PI5)", bat:57},
+  3:{nom:"QNN", inst:"5th Institute of Physics (PI5)", bat:57},
+  4:{nom:"Hot Vapor Cells", inst:"5th Institute of Physics (PI5)", bat:57},
+  5:{nom:"Cooling Systems", inst:"1st Institute of Physics (PI1)", bat:57},
+  6:{nom:"ZAQuant Cleanroom", inst:"3rd Institute of Physics (PI3)", bat:13},
+  7:{nom:"NV-Diamond-Based Scanning Probe", inst:"3rd Institute of Physics (PI3)", bat:13},
+  8:{nom:"NV-Diamond-Based Magnetocardiography", inst:"3rd Institute of Physics (PI3)", bat:13},
+  9:{nom:"Tin-Vacancy (SnV−) Centers in Diamond for Quantum Networks", inst:"3rd Institute of Physics (PI3)", bat:13},
+  10:{nom:"Quix Arena", inst:"ARENA2036", bat:19}
 };
-const SLOTS = [
-  ["15:30","15:43"],["15:48","16:01"],["16:06","16:19"],["16:24","16:37"],["16:42","16:55"],
-  ["17:05","17:18"],["17:23","17:36"],["17:41","17:54"],["17:59","18:12"],["18:17","18:30"]
-];
-/* 0 = pause */
+const SLOTS = [["15:30","15:43"],["15:48","16:01"],["16:06","16:19"],["16:24","16:37"],["16:42","16:55"],
+  ["17:05","17:18"],["17:23","17:36"],["17:41","17:54"],["17:59","18:12"],["18:17","18:30"]];
 const PLAN = {
-  1:[10,6,7,8,9,1,2,3,4,5],
-  2:[6,7,8,9,10,2,3,4,5,1],
-  3:[7,8,9,10,6,3,4,5,1,2],
-  4:[8,9,10,6,7,4,5,1,2,3],
-  5:[9,10,6,7,8,5,1,2,3,4],
-  6:[1,2,3,4,5,10,6,7,8,9],
-  7:[2,3,4,5,1,6,7,8,9,0],
-  8:[3,4,5,1,2,7,8,9,0,6],
-  9:[4,5,1,2,3,8,9,0,6,7]
+  1:[10,6,7,8,9,1,2,3,4,5], 2:[6,7,8,9,10,2,3,4,5,1], 3:[7,8,9,10,6,3,4,5,1,2],
+  4:[8,9,10,6,7,4,5,1,2,3], 5:[9,10,6,7,8,5,1,2,3,4], 6:[1,2,3,4,5,10,6,7,8,9],
+  7:[2,3,4,5,1,6,7,8,9,0], 8:[3,4,5,1,2,7,8,9,0,6], 9:[4,5,1,2,3,8,9,0,6,7]
 };
-const GROUPS = {
-  1:{c:"#C62E3A",n:"rouge"}, 2:{c:"#D9661F",n:"orange"}, 3:{c:"#A8860A",n:"jaune"},
-  4:{c:"#2E8540",n:"vert"}, 5:{c:"#11818A",n:"turquoise"}, 6:{c:"#2B5FB8",n:"bleu"},
-  7:{c:"#6B44B5",n:"violet"}, 8:{c:"#C23C86",n:"rose"}, 9:{c:"#4F5B66",n:"gris"}
-};
-const BAT_VAR = {57:"var(--b1)",13:"var(--b2)",19:"var(--b3)"};
+const GROUPS = {1:{c:"#C62E3A",n:"red"},2:{c:"#D9661F",n:"orange"},3:{c:"#A8860A",n:"yellow"},
+  4:{c:"#2E8540",n:"green"},5:{c:"#11818A",n:"teal"},6:{c:"#2B5FB8",n:"blue"},
+  7:{c:"#6B44B5",n:"purple"},8:{c:"#C23C86",n:"pink"},9:{c:"#4F5B66",n:"grey"}};
 const app = document.getElementById("app");
 const toMin = t => { const [h,m]=t.split(":").map(Number); return h*60+m; };
+const hm = t => t;
 
-function home(){
-  document.title = "Lab tour, programme des groupes";
-  let h = `<section class="home"><h1 class="display">Lab tour</h1>
-  <p>Ton groupe t’a été attribué à l’avance. Scanne le QR code de ton badge pour voir ton programme.</p>
-  <p>Pas de badge ou un souci ? Adresse-toi à un organisateur.</p>`;
-  h += `<div class="legend">
-    <div><span class="dot" style="background:var(--b1)"></span>Bâtiment 57 : labos 1 à 5</div>
-    <div><span class="dot" style="background:var(--b2)"></span>Bâtiment 13 : labos 6 à 9</div>
-    <div><span class="dot" style="background:var(--b3)"></span>Bâtiment 19 : labo 10</div></div>
-    <p class="foot">Visites de 13 minutes, puis 5 minutes pour rejoindre le labo suivant. Début à 15h30, fin à 18h30.</p></section>`;
-  app.innerHTML = h;
+function placesHtml(){
+  let h = `<h2>Locations</h2><div class="places">`;
+  for (const b of [57,13,19]){
+    const B = BUILDINGS[b];
+    h += `<div class="place" style="--bc:${B.c}"><b>${B.name}</b><span>${B.sub}</span><span>${B.addr}</span>
+      <a href="${mapUrl(b)}" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>`;
+  }
+  return h + `</div>`;
 }
-
+function rulesHtml(){
+  return `<h2>How it works</h2><ul class="rules">
+    <li>Each visit lasts 13 minutes. You then have 5 minutes to reach your next lab (10 minutes at 17:00, when everyone changes building).</li>
+    <li>Stay together with your group: everyone with the same badge colour follows the same schedule.</li>
+    <li>At the end of each visit, the lab host will let you know it’s time to move on.</li>
+    <li>Lost or running late? Ask any staff member and show them this page.</li></ul>`;
+}
+function home(){
+  document.title = "QFF Lab Tour";
+  app.innerHTML = `<section class="home"><h1>QFF Lab Tour</h1>
+    <p>Your group was assigned at the welcome desk. Scan the QR code on your badge to see your personal schedule.</p>
+    <p>No badge? Please ask a member of staff.</p></section>${rulesHtml()}${placesHtml()}`;
+}
 function group(g){
   const G = GROUPS[g], plan = PLAN[g];
-  document.title = `Groupe ${g}, lab tour`;
+  document.title = `Group ${g}, QFF Lab Tour`;
   document.documentElement.style.setProperty("--group", G.c);
-  const seesTen = plan.includes(10);
+  const first = LABS[plan[0]];
   const d = new Date(), nowMin = d.getHours()*60 + d.getMinutes();
-  let currentIdx = -1;
-  SLOTS.forEach((s,i)=>{ if(nowMin>=toMin(s[0]) && nowMin<toMin(s[1])) currentIdx=i; });
+  let cur = -1;
+  SLOTS.forEach((s,i)=>{ if(nowMin>=toMin(s[0]) && nowMin<toMin(s[1])) cur=i; });
 
-  let h = `<section class="hero">
-    <h1>Groupe ${g}</h1><p>Badge ${G.n}. Rendez-vous à 15h30 au ${LABS[plan[0]].nom}, bâtiment ${LABS[plan[0]].bat}.</p>
-    ${seesTen ? `<span class="badge10">Tiré au sort : tu visites le labo 10</span>` : ``}</section>`;
-
-  if (currentIdx >= 0){
-    const l = plan[currentIdx];
-    h += `<div class="now"><small>En ce moment, jusqu’à ${SLOTS[currentIdx][1].replace(":","h")}</small>
-      <strong>${l===0 ? "Pause" : `${LABS[l].nom}, bâtiment ${LABS[l].bat}`}</strong></div>`;
+  let h = `<section class="hero"><h1>Group ${g}</h1>
+    <p>${G.n[0].toUpperCase()+G.n.slice(1)} badge. Meet at 15:30 at <b>${first.nom}</b>, ${BUILDINGS[first.bat].name}.</p>
+    ${plan.includes(10) ? `<span class="badge10">Lucky you: your group visits the Quix Arena</span>` : ``}</section>`;
+  if (cur >= 0){
+    const l = plan[cur];
+    h += `<div class="now"><small>Right now, until ${SLOTS[cur][1]}</small>
+      <strong>${l===0 ? "Break" : `${LABS[l].nom}, ${BUILDINGS[LABS[l].bat].name}`}</strong></div>`;
   }
-
   h += `<ol class="tl">`;
   plan.forEach((l,i)=>{
     if (i>0){
       const prev = plan[i-1];
-      const pb = prev===0 ? LABS[plan[i-2]]?.bat : LABS[prev].bat;
+      const pb = prev===0 ? LABS[plan[i-2]].bat : LABS[prev].bat;
       const nb = l===0 ? null : LABS[l].bat;
-      if (i===5) h += `<li class="move big">10 min : changement de bâtiment${nb?`, direction bâtiment ${nb}`:""}</li>`;
-      else if (nb && pb && nb!==pb) h += `<li class="move big">5 min : direction bâtiment ${nb}</li>`;
-      else if (l!==0) h += `<li class="move">5 min de trajet</li>`;
+      if (i===5) h += `<li class="move big">10 min: change of building${nb?`, walk to ${BUILDINGS[nb].name}`:""}</li>`;
+      else if (nb && nb!==pb) h += `<li class="move big">5 min: walk to ${BUILDINGS[nb].name}</li>`;
+      else if (l!==0) h += `<li class="move">5 min to your next lab</li>`;
     }
-    const cls = ["slot", l===0?"pause":"", i===currentIdx?"current":"", (toMin(SLOTS[i][1])<=nowMin && currentIdx>=0 && i<currentIdx)?"done":""].join(" ");
     const s = SLOTS[i];
-    h += `<li class="${cls}"><div class="time">${s[0].replace(":","h")}<small>${s[1].replace(":","h")}</small></div>`;
-    if (l===0) h += `<div class="card"><div class="lab">Pause</div><div class="bat">Reste au bâtiment 13, on repart au créneau suivant.</div></div></li>`;
-    else h += `<div class="card" style="--bc:${BAT_VAR[LABS[l].bat]}"><div class="lab">${LABS[l].nom}</div><div class="bat">Bâtiment ${LABS[l].bat}</div></div></li>`;
+    const cls = ["slot", l===0?"pause":"", i===cur?"current":"", (cur>=0 && i<cur)?"done":""].join(" ");
+    h += `<li class="${cls}"><div class="time">${s[0]}<small>${s[1]}</small></div>`;
+    if (l===0) h += `<div class="card"><div class="lab">${SLOTS[i+1] ? "Break" : "Free time"}</div><div class="inst">${SLOTS[i+1] ? `Stay at ${BUILDINGS[13].name}; your next visit starts at ${SLOTS[i+1][0]}.` : `Your tour ends here. Thank you for joining us!`}</div></div></li>`;
+    else {
+      const L = LABS[l], B = BUILDINGS[L.bat];
+      h += `<div class="card" style="--bc:${B.c}"><div class="lab">${L.nom}</div><div class="inst">${L.inst}</div>
+        <div class="bat">${B.name} · <a href="${mapUrl(L.bat)}" target="_blank" rel="noopener">Map ↗</a></div></div></li>`;
+    }
   });
-  h += `</ol><p class="foot">Suis le responsable de ton groupe et la sonnerie de fin de créneau. Si tu es perdu, garde cette page ouverte et montre-la à un organisateur.</p>`;
+  h += `</ol>${rulesHtml()}${placesHtml()}`;
   app.innerHTML = h;
 }
-
 function route(){
   const m = location.hash.match(/^#groupe-([1-9])$/);
   if (m) group(m[1]); else { document.documentElement.style.removeProperty("--group"); home(); }

@@ -117,6 +117,7 @@ function page(key,g){
     }
     h += `</ol><h2>Good to know</h2><ul class="rules">
       <li>Each visit lasts 20 minutes, with 5 minutes to move to the next lab.</li>
+            <li>Please stay with your group of ${I.size} and your guide.</li>
       <li>Please stay with your group of ${I.size} and your guide.</li>
       <li>Your tour ends at ${R[last][1]}.</li></ul>`;
   } else {
@@ -132,6 +133,7 @@ function page(key,g){
     h += `</ol><h2>Good to know</h2><ul class="rules">
       <li>The four groups visit one after the other, 20 minutes each. Please come at your own time, not earlier.</li>
       <li>A guide will meet your group at ${I.meet}.</li>
+            <li>Please stay with your group of 10 and your guide.</li>
       <li>Please stay with your group of ${I.size} and your guide.</li></ul>`;
   }
   h += `<p class="foot">Questions on the day? Ask any member of the Qiskit Fall Fest team.</p>`;
